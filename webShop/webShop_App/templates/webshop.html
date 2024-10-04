@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>StudSec Webshop</title>
+        <link href="{% static 'css/webshop.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body>
+        <header>
+            <img class="image" src="{{ main_image }}" alt="Main Picture">
+            <div class="logo">
+                <h1>StudSec</h1>
+            </div>
+                    <!-- Navbar (sit on top) -->
+                    <div class="w3-top">
+                        <div class="w3-bar" id="myNavbar">
+                        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        <a href="#home" class="w3-bar-item w3-button">HOME</a>
+                        <a href="index.html#calendar" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-calendar"></i> CALENDAR</a>
+                        <a href="https://ctf.studsec.nl" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-trophy"></i>CTF</a>
+                        <a href="https://wiki.studsec.nl" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa fa-book"></i>WIKI</a>
+                        <a href="contact.html#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+                        <a href="contact.html#faq" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-question-circle"></i> FAQ</a>
+                        <a href="signup.html" class="w3-button w3-round-large" id="signup-button"><i class="fa fa-check-square-o"></i>Join us</a>
+                        </div>
+                    
+                        <!-- Navbar on small screens -->
+                        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                        <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+                        <a href="index.html#calendar" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-calendar"></i> CALENDAR</a>
+                        <a href="https://ctf.studsec.nl" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-trophy"></i> CTF</a>
+                        <a href="https://wiki.studsec.nl" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa fa-book"></i> WIKI</a>
+                        <a href="contact.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-envelope"></i> CONTACT</a>
+                        <a href="contact.html#faq" class="w3-bar-item w3-button w3-hide-small" onclick="toggleFunction()"><i class="fa fa-question-circle"></i> FAQ</a>
+                        <a href="signup.html" class="w3-bar-item w3-button w3-round-large" onclick="toggleFunction()"><i class="fa fa-check-square-o"></i> Join us</a>
+                        </div>
+                    </div>
+        
+                </div>
+        </header>
+
+        <main>
+            <section class="shop">
+                <h2>Merchandise Shop</h2>
+                <div class="items">
+                    <div class="item">
+                        <img src="hoodie.png" alt="Hoodie">
+                        <p>Hoodie</p>
+                    </div>
+                    <div class="item">
+                        <img src="tshirt.png" alt="T-shirt">
+                        <p>T-shirt</p>
+                    </div>
+                    <div class="item">
+                        <img src="stickers.png" alt="Stickers 10x">
+                        <p>Stickers 10x</p>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="cart">
+                <h3>My cart</h3>
+                <ul>
+                    <li><img src="tshirt.png" alt="T-shirt"> 2x T-shirt M</li>
+                    <li><img src="hoodie.png" alt="Hoodie"> 1x Hoodie S</li>
+                </ul>
+                <button>See my cart</button>
+                <button>Buy</button>
+            </aside>
+        </main>
+
+        <footer>
+            <p>© 2024 StudSec</p>
+        </footer>
+
+        <script src="{% static 'js/webshop.js' %}"></script>
+
+    </body>
+</html>
