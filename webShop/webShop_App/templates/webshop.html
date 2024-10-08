@@ -9,13 +9,14 @@
         <title>StudSec Webshop</title>
         <link href="{% static 'css/webshop.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
         <header>
             <img class="image" src="{{ main_image }}" alt="Main Picture">
-            <div class="logo">
-                <h1>StudSec</h1>
+            <!-- <div class="logo"> -->
             </div>
                     <!-- Navbar (sit on top) -->
                     <div class="w3-top">
@@ -23,13 +24,13 @@
                         <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                             <i class="fa fa-bars"></i>
                         </a>
-                        <a href="#home" class="w3-bar-item w3-button">HOME</a>
-                        <a href="index.html#calendar" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-calendar"></i> CALENDAR</a>
-                        <a href="https://ctf.studsec.nl" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-trophy"></i>CTF</a>
-                        <a href="https://wiki.studsec.nl" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa fa-book"></i>WIKI</a>
-                        <a href="contact.html#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-                        <a href="contact.html#faq" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-question-circle"></i> FAQ</a>
-                        <a href="signup.html" class="w3-button w3-round-large" id="signup-button"><i class="fa fa-check-square-o"></i>Join us</a>
+                        <a href="#home" class="w3-bar-item w3-button w3-text-light-grey">HOME</a>
+                        <a href="index.html#calendar" class="w3-bar-item w3-button w3-hide-small w3-text-light-grey"><i class="fa fa-calendar"></i> CALENDAR</a>
+                        <a href="https://ctf.studsec.nl" class="w3-bar-item w3-button w3-hide-small w3-text-light-grey"><i class="fa fa-trophy"></i>CTF</a>
+                        <a href="https://wiki.studsec.nl" class="w3-bar-item w3-button w3-hide-small w3-text-light-grey"><i class="fa fa fa-book"></i>WIKI</a>
+                        <a href="contact.html#contact" class="w3-bar-item w3-button w3-hide-small w3-text-light-grey"><i class="fa fa-envelope"></i> CONTACT</a>
+                        <a href="contact.html#faq" class="w3-bar-item w3-button w3-hide-small w3-text-light-grey"><i class="fa fa-question-circle"></i> FAQ</a>
+                        <a href="signup.html" class="w3-button w3-round-large w3-text-light-grey" id="signup-button"><i class="fa fa-check-square-o"></i>Join us</a>
                         </div>
                     
                         <!-- Navbar on small screens -->
@@ -48,33 +49,58 @@
         </header>
 
         <main>
-            <section class="shop">
-                <h2>Merchandise Shop</h2>
-                <div class="items">
-                    <div class="item">
-                        <img src="hoodie.png" alt="Hoodie">
-                        <p>Hoodie</p>
+            <div class="container_all">
+                <div class="title_container">
+                    <h1>Merchandise Shop</h1>
+                </div>
+                <hr class="line">
+                
+                <div class="container_shop">
+                    <div class="left_side">
+                        <div class="items">
+                            <div class="item" role="button" id="item_button">
+                                <div class="item_content">
+                                    <div class="image_container">
+                                        <img src="{{ Hoodie }}" alt="Hoodie">
+                                    </div>
+                                    <div class="label_container">
+                                        <p>Hoodie</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" role="button" id="item_button">
+                                <div class="item_content">
+                                    <div class="image_container">
+                                        <img src="{{ t_shirt }}" alt="T-shirt">
+                                    </div>
+                                    <div class="label_container">
+                                        <p>T-shirt</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" role="button" id="item_button">
+                                <div class="item_content">
+                                    <div class="image_container">
+                                        <img src="{{ stickers }}" alt="Stickers">
+                                    </div>
+                                    <div class="label_container">
+                                        <p>Stickers 10x</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item">
-                        <img src="tshirt.png" alt="T-shirt">
-                        <p>T-shirt</p>
-                    </div>
-                    <div class="item">
-                        <img src="stickers.png" alt="Stickers 10x">
-                        <p>Stickers 10x</p>
+
+                    <div class="right_side">
+                        <div class="cart">
+                            <h3>My cart</h3>
+                            <hr class="line">
+                            <button>See my cart</button>
+                            <button>Buy</button>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <aside class="cart">
-                <h3>My cart</h3>
-                <ul>
-                    <li><img src="tshirt.png" alt="T-shirt"> 2x T-shirt M</li>
-                    <li><img src="hoodie.png" alt="Hoodie"> 1x Hoodie S</li>
-                </ul>
-                <button>See my cart</button>
-                <button>Buy</button>
-            </aside>
+            </div>
         </main>
 
         <footer>

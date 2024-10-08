@@ -1,7 +1,4 @@
-root {
-    --grey-01: #1E1D2A;
-    --blue-01: #474463;
-}
+
 
 * {
     margin: 0;
@@ -11,21 +8,24 @@ root {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: black;
+    overflow-x: hidden;
 }
 
 header {
-    max-height: 50px;
-    /* background-image: url(“webShop/media/main_image.jpg”); */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: inline-block;  
+    width: 100%;              
+    padding: 0;              
+    margin: 0;
+    background-color: black;  
 }
 
-header .image {
-    width: 100%;
-    height: auto;
+header img.image {
+    width: 100%;            
+    height: auto;             
+    display: block;           
 }
+
 
 header .logo {
     display: flex;
@@ -48,44 +48,131 @@ header nav ul li a {
 }
 
 main {
+    background-color: white;
+    text-align: center;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    min-height: 100vh;
 }
 
-.shop {
-    width: 70%;
+.container_all {
+    justify-content: column;
+    margin-left: 8%;
+    margin-right: 8%;
 }
 
-.shop h2 {
-    margin-bottom: 20px;
+.title_container {
+    padding: 10px;
+    text-align: left;
+}
+
+h1 {
+    color: #333;
+    font-size: 36px; /* Default font size */
+}
+
+.line{
+    color: black;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-top: 1.5px solid #d1cece;
+}
+
+.container_shop {
+    display: flex;
+    justify-content: space-between;  /* Pushes the cart to the right */
+    /* align-items: flex-start;         
+    width: 100%;                  */
+    box-sizing: border-box;
+}
+
+/* .items {
+    display: flex;
+    gap: 20px;
+} */
+
+/* .item {
+    margin: 4%;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.627);
+} */
+
+.left_side {
+    box-sizing: border-box;
+    width: 75%;
+    min-width: 350px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;    
+    gap: 10px;          
 }
 
 .items {
+    margin: 2%;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;    /* Ensures items inside wrap as needed */
+    gap: 40px;          /* Optional: Adds spacing between items */
+    width: 100%;
 }
 
 .item {
-    background-color: white;
-    padding: 20px;
+    width: 37%;      
+    box-sizing: border-box;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.427);
+    position: relative;
+    overflow: hidden;
+    padding-top: 5%;
+    transition: background-color 2s 
+}
+
+.item:hover{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Optional: Shadow for better appearance */
+    background-color: #f4f4f4;
+}
+
+.right_side {
+    box-sizing: border-box;
+    width: 25%;
+    min-width: 250px;
+    background-color: white;
+}
+
+.item_content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_container {
+    width: 80%;              /* Set the width of the container */
+    height: 80%;             /* Set the height of the container */
+    overflow: hidden;          /* Ensure overflow is hidden so the image is cropped */
+    position: relative;        /* Required for absolute positioning inside */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better appearance */
 }
 
 .item img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
+    width: 100%;               /* Ensure the image fills the width of the container */
+    height: 100%;              /* Ensure the image fills the height of the container */
+    object-fit: cover;         /* Crop the image to fit the container */
+    object-position: center;   /* Center the image within the container */
+}
+
+.label_container{
+    background-color: #f4f4f4;
+    width: 100%;
 }
 
 .cart {
-    width: 25%;
-    background-color: white;
+    height: 100%;
+    margin: 4%;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.627);
+    background-color: #f4f4f4;
 }
 
 .cart h3 {
@@ -124,9 +211,13 @@ main {
 }
 
 footer {
+    bottom: 0px;
     text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: white;
-    margin-top: 20px;
+    background-color: #f4f4f4;
+    color:  #333;
+    padding: 10px;
+}
+
+.a{
+    color: lightgray;
 }

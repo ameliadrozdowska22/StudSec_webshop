@@ -18,3 +18,9 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+
+function item_button(){
+    var btn_item = document.getElementById("item_button").onclick();
+    
+}
