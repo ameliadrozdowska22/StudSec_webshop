@@ -12,3 +12,13 @@ def webshop(request):
     }
 
     return render(request, "webshop.html", context) 
+
+
+def itemPage(request):
+
+    context = {
+        "main_image": "/media/main_image.jpg",
+        "item_image": "/media/hoodie_photo.jpg",
+    }
+
+    return render(request, "itemPage.html", context) 

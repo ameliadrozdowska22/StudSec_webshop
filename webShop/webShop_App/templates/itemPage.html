@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>StudSec Item Page</title>
+        <link href="{% static 'css/itemPage.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <header>
+            <img class="image" src="{{ main_image }}" alt="Main Picture">
+            </div>
+                    <!-- Navbar (sit on top) -->
+                    <div class="w3-top">
+                        <div class="w3-bar" id="myNavbar">
+                            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <a href="#home" class="w3-bar-item w3-button w3-text-light-grey">HOME</a>
+                            <a href="{% url 'webshop' %}" class="w3-bar-item w3-button w3-text-light-grey">WEBSHOP</a>
+                        </div>
+                    
+                        <!-- Navbar on small screens -->
+                        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                            <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+                            <a href="{% url 'webshop' %}" class="w3-bar-item w3-button w3-text-light-grey">WEBSHOP</a>
+                        </div>
+                    </div>
+        
+                </div>
+        </header>
+
+        <main>
+            <div class="container_item">
+                <div class="image_section">
+                    <img src="{{ item_image }}" alt="Item Image" class="product_image">
+                </div>
+
+                <div class="details_section">
+                    <h1>{{ item_name }}</h1>
+                    <p class="price">€ {{ item_price }} EUR</p>
+
+                    <form>
+                        <label for="quantity">Quantity</label>
+                        <div class="quantity_control">
+                            <input type="number" id="quantity" name="quantity" value="1" min="1">
+                        </div>
+
+                        <div class="size_selector">
+                            <label for="size">Size</label>
+                            <div class="sizes">
+                                <span class="size_option">S</span>
+                                <span class="size_option">M</span>
+                                <span class="size_option">L</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="cart_button">Add to cart</button>
+                        <button type="button" class="buy_button">Buy</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 StudSec</p>
+        </footer>
+
+        <script src="{% static 'js/webshop.js' %}"></script>
+    </body>
+</html>
